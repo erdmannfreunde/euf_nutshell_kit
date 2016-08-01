@@ -21,7 +21,7 @@
     "php": ">=5.3",
     "contao/core-bundle": ">=3.5,<=3.5.9999",
     "contao-community-alliance/composer-plugin":"^2.3.0 || 3.*",
-    "erdmannfreunde/euf_nutshell": "^0.1.0"
+    "erdmannfreunde/euf_nutshell": ">=0.1"
   },
   "replace": {
     "contao-legacy/euf_grid": "self.version"
