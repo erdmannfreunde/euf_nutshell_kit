@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.buildpath
+.project
+.settings/
+.build/
+.idea/
+nbproject/
+node_modules/
+
+files/starterkit/dist/*/*
+!files/starterkit/dist/*/index.html
+nutshell

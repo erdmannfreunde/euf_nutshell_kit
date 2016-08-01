@@ -1,0 +1,213 @@
+// *
+// * Erdmann & Freunde - Nutshell
+// * BASE Contao Framework
+// * erdmann-freunde.de/nutshell/
+// *
+// * Lizenziert unter MIT OPEN SOURCE 
+// *
+
+//
+// TRUMPS/HELPER
+// --------------------------------------------------
+
+// VARIABLES
+
+$border-demo: 1px solid $color-gray-light;
+$color-text: $color-gray;
+
+// USED FROM _variables.scss
+
+// --------------------------------------------------
+
+// DEMO LOGO
+.logo {
+  margin: $base-spacing-unit--lg 0;
+  
+  .subline {
+    display: block;
+    font-size: 0.75rem;
+    text-align: center;
+    color: $color-gray;
+    opacity: 0.7;
+  }
+}
+
+[id="header"] {
+  width: 20%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-right: $border-demo;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  
+  @include media-query(screen-lg) {
+    width: 25%;
+  }
+  
+  @include media-query(screen-xl) {
+    width: 300px;
+  }
+  
+  > .inside {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    min-height: 100%;
+
+  }
+}
+
+[id="container"] {
+  margin-left: 20%;
+  
+  @include media-query(screen-lg) {
+    margin-left: 25%;
+  }
+
+
+  @include media-query(screen-xl) {
+    margin-left: 300px;
+  }
+}
+
+[id="main"] {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  
+  @include media-query(screen-md) {
+    max-width: 80%;
+  }
+}
+
+// DEMO NAVIGATION
+.nav--demo {
+  margin-top: $base-spacing-unit;
+  border-top: $border-demo;
+  
+  .level_1 {
+    margin-bottom: $base-spacing-unit--lg;
+    position: relative;
+    
+    > li > a,
+    > li > span {
+      border-bottom: $border-demo;
+    }
+    
+    a,
+    span.active,
+    span.trail {
+      padding: $base-spacing-unit;
+      color: $color-gray;
+      display: block;
+    }
+    
+    a:hover,    
+    span.active {
+      color: $color-brand;
+    }
+  }
+  
+  .level_2 {
+    background: lighten($color-gray-light,15%);
+    font-size: $base-font-size--xs;
+    
+    > li.first {
+      padding-top: $base-spacing-unit--sm;
+    }
+    
+    > li.last {
+      border-bottom: $border-demo;
+      padding-bottom: $base-spacing-unit--sm;
+    }
+    
+    a,
+    span.active {
+      padding: $base-spacing-unit--sm $base-spacing-unit--sm $base-spacing-unit--sm $base-spacing-unit;
+    }
+    
+    span.trail {
+      padding-bottom: $base-spacing-unit--sm;
+      //color: $color-brand;
+    }
+  }
+  
+  .level_3 {
+    a,
+    span.active {
+      padding-left: $base-spacing-unit--lg;
+    }
+  }
+}
+
+.pattern {
+  border: 1px solid $color-gray-light;
+  border-radius: $base-border-radius;
+  margin-bottom: $base-spacing-unit;
+}
+
+.pattern__head {
+  @extend %clearfix;
+  
+  font-size: 1rem;
+  
+  padding: $base-spacing-unit--sm $base-spacing-unit $base-spacing-unit--xs;
+  background: lighten($color-gray-light,10%);
+  margin-bottom: $base-spacing-unit;
+}
+
+.pattern__name {
+  padding-bottom: $base-spacing-unit--xs;
+  outline: none;
+  cursor: pointer;
+}
+
+.pattern__anchor {
+  float: right;
+  font-weight: 700;
+}
+
+.pattern__usage {
+  pre {
+    font-size: 0.875rem;
+    tab-size: 2;
+  }
+}
+
+.pattern__content {
+  @extend %clearfix;
+  
+  padding: 0 $base-spacing-unit $base-spacing-unit;
+  position: relative;
+}
+
+.resize {
+  resize: both;
+  overflow: auto;
+  width: 100%;
+  border: $border-demo;
+}
+
+iframe #container {
+  margin-left: 0;
+}
+
+.sponsored {
+  
+  margin-bottom: 0;
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.75rem;
+  
+  a {
+    color: $color-gray;
+  }
+}
+
+// helper classes
+.m-b-0 {
+  margin-bottom: 0;
+}

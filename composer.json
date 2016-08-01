@@ -1,0 +1,36 @@
+{
+  "name": "erdmannfreunde/euf_nutshell_kit",
+  "description": "Nutshell Base Framework Starterkit for Contao CMS",
+  "keywords": ["contao", "nutshell", "euf nutshell", "base framework" "starterkit"],
+  "type": "contao-module",
+  "homepage": "https://github.com/ErdmannFreunde/euf_nutshell_kit",
+  "license": "GPL-3.0+",
+	"authors":[
+		{
+			"name":"Erdmann & Freunde",
+			"homepage":"http://erdmann-freunde.de",
+			"role":"Developer"
+		}
+	],
+	"support":{
+  	"email": "moin@erdmann-freunde.de",
+		"issues":"https://github.com/ErdmannFreunde/euf_nutshell_kit/issues",
+		"source":"https://github.com/ErdmannFreunde/euf_nutshell_kit"
+	},
+	"require": {
+    "php": ">=5.3",
+    "contao/core-bundle": ">=3.5,<=3.5.9999",
+    "contao-community-alliance/composer-plugin":"^2.3.0 || 3.*",
+    "erdmannfreunde/euf_nutshell": "^0.1.0"
+0.  },
+  "replace": {
+    "contao-legacy/euf_grid": "self.version"
+  },
+  "extra": {
+    "contao": {
+      "files": {
+        "": "files/starterkit"
+      }
+    }
+  }
+}
