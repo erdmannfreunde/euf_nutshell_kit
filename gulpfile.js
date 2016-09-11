@@ -1,13 +1,13 @@
-var gulp          = require('gulp'),
-    plumber       = require('gulp-plumber'),
-    sass          = require('gulp-sass'),
-    uglify        = require('gulp-uglify'),
-    livereload    = require('gulp-livereload');
-    imagemin      = require('gulp-imagemin');
-    pngcrush      = require('imagemin-pngcrush');
-    include       = require('gulp-include');
-    autoprefixer  = require('gulp-autoprefixer');
-    pixrem       =  require('gulp-pixrem');
+var gulp          = require('gulp');
+var plumber       = require('gulp-plumber');
+var sass          = require('gulp-sass');
+var uglify        = require('gulp-uglify');
+var livereload    = require('gulp-livereload');
+var imagemin      = require('gulp-imagemin');
+var pngcrush      = require('imagemin-pngcrush');
+var include       = require('gulp-include');
+var autoprefixer  = require('gulp-autoprefixer');
+var pixrem       =  require('gulp-pixrem');
 
 
 var themePath     = "files/starterkit/";
