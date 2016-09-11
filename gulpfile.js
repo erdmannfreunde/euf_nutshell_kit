@@ -8,6 +8,7 @@ var pngcrush      = require('imagemin-pngcrush');
 var include       = require('gulp-include');
 var autoprefixer  = require('gulp-autoprefixer');
 var pixrem       =  require('gulp-pixrem');
+var notify       = require('gulp-notify');
 
 
 var themePath     = "files/starterkit/";
@@ -32,7 +33,7 @@ var paths = {
 
 gulp.task('styles', function() {
     gulp.src(paths.src.styles)
-        .pipe(plumber())
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(sass())
         .pipe(autoprefixer({
     			browsers: ['last 3 versions'],
