@@ -14,6 +14,9 @@ var browserSync   = require("browser-sync").create();
 
 
 var themePath     = "files/starterkit/";
+
+// browser sync proxy url: e.g. a vhost-based url, 
+// see also: https://www.browsersync.io/docs/options#option-proxy
 var bsProxy       = "nutshell.localhost";
 
 var paths = {
@@ -37,6 +40,7 @@ var paths = {
     },
 };
 
+// reading your sass files, add autoprefixer options, create sourcemaps, generate css file, inject css via browser-sync
 gulp.task('styles', function() {
     gulp.src(paths.src.styles)
         .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
@@ -51,6 +55,7 @@ gulp.task('styles', function() {
         .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
+// nearly the same that ['styles'] does, but adding pixrem fallback and minify css via cleanCSS
 gulp.task('minify_css', function() {
     gulp.src(paths.src.styles)
         .pipe(plumber())
@@ -64,6 +69,7 @@ gulp.task('minify_css', function() {
         .pipe(gulp.dest(paths.dist.styles))
 });
 
+// read, combine and uglyify js
 gulp.task('scripts', function() {
     gulp.src(paths.src.scripts)
     	.pipe(include())
@@ -71,6 +77,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest(paths.dist.scripts))
 });
 
+// read and optimize images
 gulp.task('images', function () {
     return gulp.src(paths.src.images)
         .pipe(imagemin({
@@ -79,11 +86,13 @@ gulp.task('images', function () {
         .pipe(gulp.dest(paths.dist.images));
 });
 
+// copy static files from src to dist
 gulp.task('copy', function() {
    gulp.src(paths.src.fonts)
    .pipe(gulp.dest(paths.dist.fonts));
 });
 
+// watcher task
 gulp.task('serve', ['styles'], function() {
     // https://www.browsersync.io/docs/gulp#gulp-sass-maps
     browserSync.init({
