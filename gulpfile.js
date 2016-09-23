@@ -44,10 +44,22 @@ gulp.task('styles', function() {
     			browsers: ['last 3 versions'],
     			cascade: false
     		}))
-    		.pipe(pixrem({ rootValue: '16px' }))
         .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest(paths.dist.styles))
         .pipe(browserSync.stream({match: '**/*.css'}));
+});
+
+gulp.task('minify_css', function() {
+    gulp.src(paths.src.styles)
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(autoprefixer({
+    			browsers: ['last 3 versions'],
+    			cascade: false
+    		}))
+        .pipe(cleanCSS())
+        .pipe(pixrem({ rootValue: '16px' }))
+        .pipe(gulp.dest(paths.dist.styles))
 });
 
 gulp.task('scripts', function() {
@@ -77,5 +89,5 @@ gulp.task('serve', ['styles'], function() {
     gulp.watch(paths.watch.scripts, ['scripts']).on('change', browserSync.reload);
 });
 
-gulp.task('deploy', ['styles', 'scripts', 'images']);
 gulp.task('default', ['serve']);
+gulp.task('deploy', ['minify_css', 'scripts', 'images']);
