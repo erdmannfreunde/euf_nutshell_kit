@@ -2,16 +2,19 @@ var gulp          = require('gulp');
 var plumber       = require('gulp-plumber');
 var sass          = require('gulp-sass');
 var uglify        = require('gulp-uglify');
-var livereload    = require('gulp-livereload');
 var imagemin      = require('gulp-imagemin');
 var pngcrush      = require('imagemin-pngcrush');
 var include       = require('gulp-include');
 var autoprefixer  = require('gulp-autoprefixer');
-var pixrem       =  require('gulp-pixrem');
-var notify       = require('gulp-notify');
+var pixrem        = require('gulp-pixrem');
+var notify        = require('gulp-notify');
+var cleanCSS      = require('gulp-clean-css');
+var sourcemaps    = require('gulp-sourcemaps');
+var browserSync   = require("browser-sync").create();
 
 
 var themePath     = "files/starterkit/";
+var bsProxy       = "nutshell.localhost";
 
 var paths = {
     src: {
@@ -25,9 +28,10 @@ var paths = {
         images:     themePath + 'dist/img',
     },
     watch: {
-        styles:     'files/**/*.scss',
+        styles:     themePath + 'src/scss/**/*.scss',
         scripts:    themePath + 'src/js/**/*.js',
         images:     themePath + 'src/img/**/*',
+        templates:  'templates/**/*'
     },
 };
 
@@ -41,7 +45,7 @@ gulp.task('styles', function() {
     		}))
     		.pipe(pixrem({ rootValue: '16px' }))
         .pipe(gulp.dest(paths.dist.styles))
-        .pipe(livereload({ auto: false }));
+        .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 gulp.task('scripts', function() {
@@ -49,7 +53,6 @@ gulp.task('scripts', function() {
     	.pipe(include())
         .pipe(uglify())
         .pipe(gulp.dest(paths.dist.scripts))
-        .pipe(livereload({ auto: false }));
 });
 
 gulp.task('images', function () {
@@ -60,12 +63,17 @@ gulp.task('images', function () {
         .pipe(gulp.dest(paths.dist.images));
 });
 
-gulp.task('watch', function() {
-    livereload.listen();
+gulp.task('serve', ['styles'], function() {
+    // https://www.browsersync.io/docs/gulp#gulp-sass-maps
+    browserSync.init({
+        proxy: bsProxy,
+        open: false
+    });
+
     gulp.watch(paths.watch.styles,  ['styles']);
-    gulp.watch(paths.watch.scripts, ['scripts']);
-    gulp.watch(paths.watch.images, 	['images']);
+    gulp.watch(paths.watch.templates).on('change', browserSync.reload);
+    gulp.watch(paths.watch.scripts, ['scripts']).on('change', browserSync.reload);
 });
 
-gulp.task('default', ['styles', 'scripts', 'watch']);
 gulp.task('deploy', ['styles', 'scripts', 'images']);
+gulp.task('default', ['serve']);
