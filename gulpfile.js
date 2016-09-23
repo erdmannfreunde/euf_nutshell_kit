@@ -21,11 +21,13 @@ var paths = {
         styles:     themePath + 'src/scss/default.scss',
         scripts:    themePath + 'src/js/**/*.js',
         images:     themePath + 'src/img/**/*',
+        fonts:      themePath + 'src/fonts/**/*'
     },
     dist: {
         styles:     themePath + 'dist/css',
         scripts:    themePath + 'dist/js',
         images:     themePath + 'dist/img',
+        fonts:      themePath + 'dist/fonts'
     },
     watch: {
         styles:     themePath + 'src/scss/**/*.scss',
@@ -75,6 +77,11 @@ gulp.task('images', function () {
           progressive: true,
         }))
         .pipe(gulp.dest(paths.dist.images));
+});
+
+gulp.task('copy', function() {
+   gulp.src(paths.src.fonts)
+   .pipe(gulp.dest(paths.dist.fonts));
 });
 
 gulp.task('serve', ['styles'], function() {
