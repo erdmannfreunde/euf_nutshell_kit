@@ -38,12 +38,14 @@ var paths = {
 gulp.task('styles', function() {
     gulp.src(paths.src.styles)
         .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
     			browsers: ['last 3 versions'],
     			cascade: false
     		}))
     		.pipe(pixrem({ rootValue: '16px' }))
+        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest(paths.dist.styles))
         .pipe(browserSync.stream({match: '**/*.css'}));
 });
