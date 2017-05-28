@@ -29,7 +29,7 @@
   "extra": {
     "contao": {
       "userfiles": {
-        "files/starterkit": "starterkit"
+        "files/starterkit/": "starterkit/"
       }
     }
   }
