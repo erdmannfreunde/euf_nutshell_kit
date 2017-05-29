@@ -27,7 +27,9 @@
   "extra": {
     "contao": {
       "userfiles": {
-        "files/starterkit/": "starterkit/"
+        "files/starterkit": "starterkit"
+        "package.json": "package.json",
+        "gulpfile.js": "gulpfile.js"
       }
     }
   }
