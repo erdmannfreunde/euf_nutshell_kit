@@ -19,7 +19,7 @@
   },
   "require": {
     "php": ">=5.3",
-    "contao-community-alliance/composer-plugin":"^2.3.0 || dev-hotfix/3.0.6",
+    "contao-community-alliance/composer-plugin":"^2.3.0 || dev-hotfix/3.0.6"
   },
   "replace": {
     "contao-legacy/euf_nutshell_kit": "self.version"
