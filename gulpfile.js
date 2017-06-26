@@ -106,4 +106,4 @@ gulp.task('serve', ['styles'], function() {
 });
 
 gulp.task('default', ['serve']);
-gulp.task('deploy', ['minify_css', 'scripts', 'images']);
+gulp.task('deploy', ['minify_css', 'scripts', 'images', 'copy']);
