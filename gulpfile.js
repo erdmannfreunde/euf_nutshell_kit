@@ -18,6 +18,7 @@ var themePath     = "files/starterkit/";
 // browser sync proxy url: e.g. a vhost-based url, 
 // see also: https://www.browsersync.io/docs/options#option-proxy
 var bsProxy       = "nutshell.localhost";
+var rootFontSize	= "16px";
 
 var paths = {
     src: {
@@ -65,7 +66,7 @@ gulp.task('minify_css', function() {
     			cascade: false
     		}))
         .pipe(cleanCSS())
-        .pipe(pixrem({ rootValue: '16px' }))
+        .pipe(pixrem({ rootValue:  rootFontSize }))
         .pipe(gulp.dest(paths.dist.styles))
 });
 
