@@ -30,8 +30,10 @@
     "contao": {
       "userfiles": {
         "files/starterkit": "starterkit",
-        "package.json": "package.json",
-        "gulpfile.js": "gulpfile.js"
+      },
+      "sources": {
+	      "package.json": "package.json",
+        "gulpfile.js": "gulpfile.js.example"
       }
     }
   }
