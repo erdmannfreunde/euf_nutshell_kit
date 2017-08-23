@@ -33,7 +33,7 @@
       },
       "sources": {
 	      "package.json": "package.json",
-        "gulpfile.js": "gulpfile.js.example"
+        "gulpfile.js.example": "gulpfile.js.example"
       }
     }
   }
