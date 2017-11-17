@@ -12,8 +12,26 @@
     "require": {
         "php": "^5.6|^7.0",
         "contao/managed-edition": "^4.4",
-        "erdmannfreunde/euf_nutshell": "^0.4"
+        "erdmannfreunde/euf_nutshell": "^0.4",
+        "erdmannfreunde/euf_nutshell_installer": "dev-master"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:richardhj/euf_nutshell_installer.git"
+        },
+    ],
+    "config": {
+        "component-dir": "assets"
     },
     "scripts": {
+        "post-install-cmd": [
+            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication",
+            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell"
+        ],
+        "post-update-cmd": [
+            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication",
+            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell"
+        ]
     }
 }
