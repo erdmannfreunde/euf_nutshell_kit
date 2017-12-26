@@ -36,6 +36,4 @@ nbproject/
 
 # Nutshell
 /node_modules/
-/files/starterkit/dist/*/*
-!/files/starterkit/dist/*/index.html
-nutshell
+/files/nutshell
