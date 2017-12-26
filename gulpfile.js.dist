@@ -18,7 +18,7 @@ var themePath     = "files/starterkit/";
 // browser sync proxy url: e.g. a vhost-based url, 
 // see also: https://www.browsersync.io/docs/options#option-proxy
 var bsProxy       = "nutshell.localhost";
-var rootFontSize	= "16px";
+var rootFontSize  = "16px";
 
 var paths = {
     src: {
