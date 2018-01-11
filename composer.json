@@ -22,12 +22,6 @@
         "erdmannfreunde/euf_nutshell_installer": "dev-master",
         "roave/security-advisories": "dev-master"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "git@github.com:richardhj/euf_nutshell_installer.git"
-        }
-    ],
     "config": {
         "component-dir": "assets"
     },
