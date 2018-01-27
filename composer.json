@@ -27,12 +27,12 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication",
-            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell"
+            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell",
+            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
         ],
         "post-update-cmd": [
-            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication",
-            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell"
+            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell",
+            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
         ]
     }
 }
