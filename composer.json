@@ -1,38 +1,38 @@
 {
-  "name": "erdmannfreunde/euf_nutshell_kit",
-  "description": "Nutshell Base Framework Starterkit for Contao CMS",
-  "keywords": ["contao", "nutshell", "euf nutshell", "base framework", "starterkit"],
-  "type": "contao-module",
-  "homepage": "https://github.com/ErdmannFreunde/euf_nutshell_kit",
-  "license": "GPL-3.0+",
-  "authors":[
-    {
-      "name":"Erdmann & Freunde",
-      "homepage":"http://erdmann-freunde.de",
-      "role":"Developer"
+    "name": "erdmannfreunde/euf_nutshell_kit",
+    "description": "Start a new contao project based on the nutshell framework",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Dennis Erdmann",
+            "email": "dennis@erdmann-freunde.de"
+        }
+    ],
+    "require": {
+        "php": "^5.6|^7.0",
+        "contao/manager-bundle": "4.4.*",
+        "contao/calendar-bundle": "^4.4",
+        "contao/comments-bundle": "^4.4",
+        "contao/faq-bundle": "^4.4",
+        "contao/listing-bundle": "^4.4",
+        "contao/news-bundle": "^4.4",
+        "contao/newsletter-bundle": "^4.4",
+        "erdmannfreunde/euf_nutshell": "^0.4",
+        "erdmannfreunde/euf_nutshell_installer": "dev-master",
+        "roave/security-advisories": "dev-master"
+    },
+    "config": {
+        "component-dir": "assets"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell",
+            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+        ],
+        "post-update-cmd": [
+            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell",
+            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+        ]
     }
-  ],
-  "support":{
-    "email": "moin@erdmann-freunde.de",
-    "issues":"https://github.com/ErdmannFreunde/euf_nutshell_kit/issues",
-    "source":"https://github.com/ErdmannFreunde/euf_nutshell_kit"
-  },
-  "require": {
-    "php": ">=5.3",
-    "contao/core-bundle": ">=3.5,<=3.5.9999",
-    "contao-community-alliance/composer-plugin":"^2.3.0 || 3.*",
-    "erdmannfreunde/euf_nutshell": ">=0.1"
-  },
-  "replace": {
-    "contao-legacy/euf_nutshell_kit": "self.version"
-  },
-  "extra": {
-    "contao": {
-      "files": {
-        "files/starterkit": "files/starterkit",
-        "package.json": "package.json",
-        "gulpfile.js": "gulpfile.js"
-      }
-    }
-  }
 }

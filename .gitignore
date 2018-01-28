@@ -9,8 +9,31 @@ Thumbs.db
 .build/
 .idea/
 nbproject/
-node_modules/
 
-files/starterkit/dist/*/*
-!files/starterkit/dist/*/index.html
-nutshell
+# App config
+/app/config/parameters.yml
+
+# Generated folders
+/assets/
+/contao-manager/
+/system/*
+!/system/config/
+/system/config/localconfig.php
+/system/config/tcpdf.php
+/var/
+/vendor/
+
+# Symlinked resources
+/web/assets
+/web/bundles/
+/web/files/
+/web/share/
+/web/system/
+/web/vendor/
+
+# Skip files
+/system/modules/*/.skip
+
+# Nutshell
+/node_modules/
+/files/nutshell
