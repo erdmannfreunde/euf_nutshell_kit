@@ -2,7 +2,7 @@
     "name": "erdmannfreunde/euf_nutshell_kit",
     "description": "Start a new contao project based on the nutshell framework",
     "type": "project",
-    "license": "GPL-3.0+",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Dennis Erdmann",
