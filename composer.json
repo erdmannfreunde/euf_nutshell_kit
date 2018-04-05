@@ -18,20 +18,19 @@
         "contao/listing-bundle": "^4.4",
         "contao/news-bundle": "^4.4",
         "contao/newsletter-bundle": "^4.4",
-        "erdmannfreunde/euf_nutshell": "^0.4",
-        "erdmannfreunde/euf_nutshell_installer": "dev-master",
-        "roave/security-advisories": "dev-master"
+        "erdmannfreunde/euf_nutshell": "^0.4"
+    },
+    "require-dev": {
+        "erdmannfreunde/euf_nutshell_installer": "^0.2"
     },
     "config": {
         "component-dir": "assets"
     },
     "scripts": {
         "post-install-cmd": [
-            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell",
             "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
         ],
         "post-update-cmd": [
-            "EuF\\Nutshell\\Composer\\ScriptHandler::initializeNutshell",
             "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
         ]
     }
