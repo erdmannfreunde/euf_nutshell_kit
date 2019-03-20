@@ -3,18 +3,18 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "browser-sync": "^2.15.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-clean-css": "^2.0.12",
-    "gulp-imagemin": "^3.0.3",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-imagemin": "^5.0.3",
     "gulp-include": "^2.2.1",
-    "gulp-notify": "^2.2.0",
+    "gulp-notify": "^3.2.0",
     "gulp-pixrem": "^1.0.0",
     "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.3.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^2.0.0",
-    "imagemin-pngcrush": "^5.0.0"
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.1",
+    "imagemin-pngcrush": "^6.0.0"
   }
 }
