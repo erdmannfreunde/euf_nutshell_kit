@@ -21,7 +21,7 @@
         "erdmannfreunde/euf_nutshell": "^0.4"
     },
     "require-dev": {
-        "erdmannfreunde/euf_nutshell_installer": "^0.2"
+        "erdmannfreunde/euf_nutshell_installer": "^0.3"
     },
     "config": {
         "component-dir": "assets"
