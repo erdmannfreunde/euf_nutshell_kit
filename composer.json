@@ -18,7 +18,7 @@
         "contao/listing-bundle": "^4.4",
         "contao/news-bundle": "^4.4",
         "contao/newsletter-bundle": "^4.4",
-        "erdmannfreunde/euf_nutshell": "^0.4"
+        "erdmannfreunde/euf_nutshell": "^1.0"
     },
     "require-dev": {
         "erdmannfreunde/euf_nutshell_installer": "^0.3"
