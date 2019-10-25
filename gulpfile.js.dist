@@ -6,7 +6,6 @@ const imagemin      = require('gulp-imagemin');
 const pngcrush      = require('imagemin-pngcrush');
 const include       = require('gulp-include');
 const autoprefixer  = require('gulp-autoprefixer');
-const pixrem        = require('gulp-pixrem');
 const notify        = require('gulp-notify');
 const cleanCSS      = require('gulp-clean-css');
 const sourcemaps    = require('gulp-sourcemaps');
@@ -18,8 +17,6 @@ const themePath     = 'files/starterkit/';
 // browser sync proxy url: e.g. a vhost-based url, 
 // see also: https://www.browsersync.io/docs/options#option-proxy
 const bsProxy       = 'nutshell.localhost';
-const rootFontSize  = '16px';
-const browserVersions = [ 'last 3 versions' ];
 
 const paths = {
     src: {
@@ -49,7 +46,6 @@ const styles = function() {
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({
-            browsers: browserVersions,
             cascade: false
         }))
         .pipe(sourcemaps.write('../maps'))
@@ -58,17 +54,15 @@ const styles = function() {
 };
 exports.styles = styles;
 
-// nearly the same that ['styles'] does, but adding pixrem fallback and minify css via cleanCSS
+// nearly the same that ['styles'] does, but minify css via cleanCSS
 const minifyCss = function() {
     return gulp.src(paths.src.styles)
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer({
-            browsers: browserVersions,
             cascade: false
         }))
         .pipe(cleanCSS())
-        .pipe(pixrem({ rootValue:  rootFontSize, browsers: browserVersions }))
         .pipe(gulp.dest(paths.dist.styles));
 };
 exports.minify_css = minifyCss;
