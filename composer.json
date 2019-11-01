@@ -33,5 +33,10 @@
         "post-update-cmd": [
             "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
         ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-4.4": "4.4.x-dev"
+        }
     }
 }
